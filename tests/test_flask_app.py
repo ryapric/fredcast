@@ -11,7 +11,7 @@ def test_health(client):
 def test_fcast(client):
     fred_id = 'MONAN'
     start_date = '2018-01-01'
-    r = client.get(f'/api/fcast?fred_id={fred_id}&start_date={start_date}')
+    r = client.get(f'/api/fredcast?fred_id={fred_id}&start_date={start_date}')
     assert r.is_json
     data = json.loads(r.data.decode('utf-8'))
     assert list(data[0].keys()) == ['DATE', fred_id, 'label', 'MAPE']
