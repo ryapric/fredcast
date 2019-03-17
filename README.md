@@ -14,7 +14,12 @@ case, by leveraging [Google Cloud Platform's](https://cloud.google.com) [Cloud
 Build system](https://cloud.google.com/cloud-build), though there are many tools
 to help you realize these and other goals ([AWS](https://aws.amazon.com),
 [Azure](https://azure.microsoft.com), [Jenkins](https://jenkins.io) (on-prem,
-even), etc).
+even), etc). The config file for Cloud Build is found in the repo top-level
+(`cloudbuild.yaml`).
+
+FREDcast is currently hosted on [Google App
+Engine](https://cloud.google.com/appengine), and its deployment config file
+(`app.yaml`) is also in the repo top-level for exploration.
 
 API Documentation
 -----------------
