@@ -8,7 +8,7 @@ def test_health(client):
     assert r.data == b'{"msg": "ok"}'
 # end test_health
 
-def test_fcast(client):
+def test_api_fredcast(client):
     fred_id = 'MONAN'
     start_date = '2018-01-01'
     r = client.get(f'/api/fredcast?fred_id={fred_id}&start_date={start_date}')

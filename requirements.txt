@@ -1,3 +1,5 @@
+# Try to install wheel first, so sqlalchemy doesn't fail locally
+wheel
 flask >= 1.0.2
 pandas >= 0.23.4
 requests >= 2.21.0

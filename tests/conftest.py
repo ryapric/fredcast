@@ -5,7 +5,9 @@ import pandas as pd
 
 @pytest.fixture
 def df():
-    return pd.read_csv('tests/data/example.csv')
+    df = pd.read_csv('tests/data/example.csv')
+    df['DATE'] = pd.to_datetime(df['DATE'])
+    return df
 
 @pytest.fixture
 def app():
