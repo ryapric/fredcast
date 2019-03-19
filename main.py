@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
-# from waitress import serve
 from fredcast.app.app_factory import create_app
+import sys
+from waitress import serve
 
 app = create_app()
 
 if __name__ == '__main__':
-    app.run(host = '127.0.0.1', port = 8080)
+    serve(app, host = '0.0.0.0', port = sys.argv[1])

@@ -1,6 +1,8 @@
 # App Engine config, configured to be lowest-cost
 runtime: python37
 
+entrypoint: python3 main.py :$PORT
+
 # The lowest-tier autoscaling instance class (equivalent to f1-micro VM)
 instance_class: F1
 

@@ -25,6 +25,7 @@ test: clean venv dev-pkgs install_venv
 	@$(venv-act); \
 	python3 -m pytest -v # don't chain from here, so failed tests throw shell error code
 	@make -s clean
+	@rm -rf venv
 
 build: venv dev-pkgs
 	@$(venv-act); \
