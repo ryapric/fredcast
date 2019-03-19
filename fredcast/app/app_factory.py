@@ -45,7 +45,7 @@ def create_app(test_config = None):
         start_date_default = get.start_date_default
         end_date_default = get.end_date_default
 
-        fred_id = request.args.get('fred_id', default = 'MONAN', type = str)
+        fred_id = request.args.get('fred_id', default = 'GDP', type = str)
         start_date = request.args.get('start_date', default = start_date_default, type = str)
         end_date = request.args.get('end_date', default = end_date_default, type = str)
 
@@ -68,6 +68,8 @@ def create_app(test_config = None):
             </p>
             """
             return errmsg, 400
+        # end try
+        
         df_fcast = fc.fredcast(df, fred_id)
 
         # Enforce response is *clean* JSON
