@@ -1,13 +1,12 @@
 # App Engine config, configured to be lowest-cost
-
 runtime: python37
 
 # The lowest-tier autoscaling instance class (equivalent to f1-micro VM)
 instance_class: F1
 
-# Set some defaults (or lower) as placeholders
-automatic_scaling: 
-  target_cpu_utilization: 0.6
-  min_instances: 0 # no instances if no load
-  max_instances: 2
-  max_concurrent_requests: 8
+# # Set some defaults (or lower) as placeholders
+# automatic_scaling: 
+#   target_cpu_utilization: 0.6
+#   min_instances: 0 # no instances if no load
+#   max_instances: 2
+#   max_concurrent_requests: 8
