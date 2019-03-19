@@ -4,10 +4,16 @@ import os
 import pandas as pd
 
 @pytest.fixture
-def df():
-    df = pd.read_csv('tests/data/example.csv')
-    df['DATE'] = pd.to_datetime(df['DATE'])
-    return df
+def df_m():
+    df_m = pd.read_csv('tests/data/example_monthly.csv')
+    df_m['DATE'] = pd.to_datetime(df_m['DATE'])
+    return df_m
+
+@pytest.fixture
+def df_q():
+    df_q = pd.read_csv('tests/data/example_quarterly.csv')
+    df_q['DATE'] = pd.to_datetime(df_q['DATE'])
+    return df_q
 
 @pytest.fixture
 def app():

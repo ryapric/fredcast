@@ -19,16 +19,16 @@ def test_get_fred():
             get_fred('MONAN', end_date = d)
 # end test_get_fred
 
-def test_db_write(df):
+def test_db_write(df_m):
     fred_id = 'MONAN'
     dbpath = './test.db'
-    db_write(df, fred_id, dbpath = dbpath)
+    db_write(df_m, fred_id, dbpath = dbpath)
 
     con = create_engine(f'sqlite:///{dbpath}').connect()
     tbl = pd.read_sql_table(f'fcast_{fred_id}', con)
     con.close()
 
-    assert_frame_equal(tbl, df)
+    assert_frame_equal(tbl, df_m)
 # end test_db_write
 
 def test_teardown(teardown):
