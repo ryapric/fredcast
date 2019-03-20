@@ -27,15 +27,11 @@ API Documentation
 This Flask application is hosted [here](https://fredcast.appspot.com), and
 exposes several endpoints from which you may request data via query strings:
 
-| Endpoint | Query String Parameter | Parameter Format |
-| --- | --- | --- |
-| `/api/fredcast` | `fred_id` | String. A list of valid `fred_id`s can be found [here](https://fred.stlouisfed.org/tags/series), hovering over a link, and noting the last part of its URL |
-| `/api/fredcast` | `start_date` | String. Must be in the format `YYYY-MM-DD` |
-| `/api/fredcast` | `end_date` | String. Must be in the format `YYYY-MM-DD` |
+| Endpoint | Query String Parameter | Parameter Format | Default |
+| --- | --- | --- | --- |
+| `/api/fredcast` | `fred_id` | String. A list of valid `fred_id`s can be found [here](https://fred.stlouisfed.org/tags/series), hovering over a link, and noting the last part of its URL | `GDP` |
+| `/api/fredcast` | `start_date` | String. Must be in the format `YYYY-MM-DD` | Five years ago, from today |
+| `/api/fredcast` | `end_date` | String. Must be in the format `YYYY-MM-DD` | Today |
 
 Future Work
 -----------
-
-Currently, the forecast methodology only supports *monthly* data (as that's the
-frequency it expects). This will soon be expanded to automatically handle data
-of any frequency.
