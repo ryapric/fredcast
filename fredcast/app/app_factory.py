@@ -21,7 +21,7 @@ def create_app(test_config = None):
         Those defaults are:
         <br/>
         <ul>
-            <li>`fred_id` = 'MONAN'</li>
+            <li>`fred_id` = 'GDP'</li>
             <li>`start_date` = five years ago</li>
             <li>`end_date` = today</li>
         </ul>

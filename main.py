@@ -7,4 +7,4 @@ import sys
 app = create_app()
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port = sys.argv[1])
+    app.run(host = '127.0.0.1', port = 8080)
