@@ -1,8 +1,8 @@
 # App Engine config, configured to be lowest-cost
 runtime: python37
 
-# The lowest-tier autoscaling instance class (equivalent to f1-micro VM)
-instance_class: F1
+# Instance class; note that F1 was almost too small for this to even run
+instance_class: F2
 
 # Set some defaults (or lower) as placeholders
 automatic_scaling: 
