@@ -19,7 +19,7 @@ venv: FORCE
 dev-pkgs: venv
 	@$(venv-act); \
 	pip3 install wheel; \
-	pip3 install setuptools pytest pytest-cov pytest-flask
+	pip3 install setuptools coverage pytest pytest-cov pytest-flask
 
 test: clean venv dev-pkgs install_venv
 	@$(venv-act); \
