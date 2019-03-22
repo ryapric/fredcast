@@ -1,5 +1,5 @@
-Project: Forecasts for Federal Reserve Bank of St. Louis
-========================================================
+Request Forecasts from Federal Reserve Economic Data (FRED)
+===========================================================
 
 [FREDcast](https://fredcast.appspot.com) is a web application for
 programmatically requesting forecasts of the Federal Reserve Economic Data
