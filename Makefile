@@ -19,11 +19,14 @@ venv: FORCE
 dev-pkgs: venv
 	@$(venv-act); \
 	pip3 install wheel; \
-	pip3 install setuptools pytest pytest-flask
+	pip3 install setuptools pytest pytest-cov pytest-flask
 
 test: clean venv dev-pkgs install_venv
 	@$(venv-act); \
-	python3 -m pytest -v # don't chain from here, so failed tests throw shell error code
+	python3 -m pytest --cov=fredcast . -v # don't chain from here, so failed tests throw shell error code
+	@if [ $$(coverage report | tail -1 | awk '{ print $$NF }' | tr -d '%') -lt 95 ]; then \
+		echo -e "\nFAILED: Insufficient test coverage (<95%)\n" 2>&1 && exit 1; \
+	fi
 	@make -s clean
 	@rm -rf venv
 
