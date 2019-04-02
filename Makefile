@@ -40,8 +40,9 @@ install_venv: venv
 	if [ -e ./requirements.txt ]; then pip3 install -r requirements.txt; else pip3 install . ; fi
 
 clean: FORCE
-	@find . -type d -regextype posix-extended -regex ".*\.egg-info|.*cache.*" -exec rm -rf {} +
+	@find . -type d -regextype posix-extended -regex ".*\.egg-info|.*pycache.*" -exec rm -rf {} +
 	@find . -type f -regextype posix-extended -regex ".*\.pyc" -exec rm {} +
+	@find . -type f -regextype posix-extended -regex ".*,cover" -exec rm {} +
 	@find . -name "test.db" -exec rm {} +
 
 # Install to system library
