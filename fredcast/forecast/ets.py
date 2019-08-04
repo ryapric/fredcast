@@ -14,7 +14,8 @@ def fredcast(df, fred_id, seasonal_periods = None, h = None):
 
     :param seasonal_periods: Number of seasonal periods for data. Defaults to
                              None, but will be computed based on data if not
-                             supplied.
+                             supplied. Currently only supports monthly and
+                             quaterly data.
 
     :param h: Number of periods to forecast forward. Default is None, but will
               be computed as identical to the `seasonal_periods`, if not
@@ -30,9 +31,9 @@ def fredcast(df, fred_id, seasonal_periods = None, h = None):
     elif (datediff_min * 3) <= datediff <= (datediff_max * 3):
         seasonal_periods = 4
         freqmult = 3
-    elif (datediff_min * 12) <= datediff <= (datediff_max * 12):
-        seasonal_periods = 1
-        freqmult = 12
+    # elif (datediff_min * 12) <= datediff <= (datediff_max * 12):
+    #     seasonal_periods = 1
+    #     freqmult = 12
     else:
         raise Exception('Cannot determine data frequency; please pass explicitly')
     
@@ -70,14 +71,14 @@ def fit_ets(df, fred_id, seasonal_periods):
     :param fred_id: FRED series ID
 
     :param seasonal_periods: Number of seasonal periods for data. If monthly,
-                             then 12 (the default); if quarterly, then 4; etc.
+                             then 12; if quarterly, then 4; etc.
     
     :returns: `statsmodels` ETS model object
     """
     model = ExponentialSmoothing(
         df[fred_id],
-        trend = 'add',
-        seasonal = 'add',
+        trend = 'mul',
+        seasonal = 'mul',
         seasonal_periods = seasonal_periods
     ).fit()
     return model
