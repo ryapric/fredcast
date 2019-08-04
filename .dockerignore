@@ -1,5 +1,7 @@
 *
 !setup.py
-!stlfed_py/
+!requirements.txt
+!main.py
+!fredcast/
 !tests/
 !Makefile

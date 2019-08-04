@@ -17,21 +17,21 @@ to help you realize these and other goals ([AWS](https://aws.amazon.com),
 even), etc). The config file for Cloud Build is found in the repo top-level
 (`cloudbuild.yaml`).
 
-FREDcast is currently hosted on [Google App
+FREDcast is sometimes hosted on [Google App
 Engine](https://cloud.google.com/appengine), and its deployment config file
 (`app.yaml`) is also in the repo top-level for exploration.
 
 API Documentation
 -----------------
 
-This Flask application is hosted [here](https://fredcast.appspot.com), and
-exposes several endpoints from which you may request data via query strings:
+This Flask application is sometimes hosted [here](https://fredcast.appspot.com),
+and exposes several endpoints from which you may request data via query strings:
 
 | Endpoint | Query String Parameter | Parameter Format | Default |
 | --- | --- | --- | --- |
 | `/api/fredcast` | `fred_id` | String. A list of valid `fred_id`s can be found [here](https://fred.stlouisfed.org/tags/series), hovering over a link, and noting the last part of its URL | `GDP` |
-| `/api/fredcast` | `start_date` | String. Must be in the format `YYYY-MM-DD` | Five years ago, from today |
-| `/api/fredcast` | `end_date` | String. Must be in the format `YYYY-MM-DD` | Today |
+|   | `start_date` | String. Must be in the format `YYYY-MM-DD` | Five years ago, from today |
+|   | `end_date` | String. Must be in the format `YYYY-MM-DD` | Today |
 
 Future Work
 -----------
