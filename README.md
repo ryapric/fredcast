@@ -1,10 +1,10 @@
 Request Forecasts from Federal Reserve Economic Data (FRED)
 ===========================================================
 
-[FREDcast](https://fredcast.appspot.com) is a web application for
-programmatically requesting forecasts of the Federal Reserve Economic Data
-(FRED). It spawned as an example of how to introduce DevOps best-practices into
-"data science" workflows, a workshop track I led; you can find that parent repo
+FREDcast is a web application for programmatically requesting forecasts of the
+Federal Reserve Economic Data (FRED). It spawned as an example of how to
+introduce DevOps best-practices into "data science" workflows, a workshop
+track I led; you can find that parent repo
 [here](https://github.com/ryapric/pbdw).
 
 It now serves as a lightweight example to myself and others on how to use
